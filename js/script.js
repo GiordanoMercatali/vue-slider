@@ -28,6 +28,8 @@ createApp({
                 ],
 
                 activeIndex: 0,
+                curInterval: undefined,
+                intervalDuration: 3000,
         }
     },
 
@@ -39,13 +41,23 @@ createApp({
                 this.activeIndex++;
             }
         },
-         showPrev: function() {
+        showPrev: function() {
             if(this.activeIndex === 0) {
                 this.activeIndex = this.slides.length - 1;
             } else {
                 this.activeIndex--;
             }
-         }
-    
-    }
+         },    
+        startTimer: function() {
+            if(this.curInterval === undefined){
+                this.curInterval = setInterval(this.showNext, this.intervalDuration);
+            }
+        },
+    },
+
+    created() {
+        console.log("L'APP È CREATA");
+        this.startTimer();
+      }
+
 }).mount("#app");
