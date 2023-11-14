@@ -5,7 +5,7 @@ createApp({
         return{
             slides: [
                 {
-                    image: 'img/01.webp',
+                        image: 'img/01.webp',
                         title: 'Marvel\'s Spiderman Miles Morale',
                         text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
                     }, {
@@ -32,7 +32,20 @@ createApp({
     },
 
     methods: {
-        
+        showNext: function() {
+            if(this.activeIndex === this.slides.length - 1) {
+                this.activeIndex = 0;
+            } else {
+                this.activeIndex++;
+            }
+        },
+         showPrev: function() {
+            if(this.activeIndex === 0) {
+                this.activeIndex = this.slides.length - 1;
+            } else {
+                this.activeIndex--;
+            }
+         }
     
     }
 }).mount("#app");
