@@ -49,5 +49,3 @@ createApp({
     
     }
 }).mount("#app");
-
-console.log(slides);

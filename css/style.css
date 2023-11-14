@@ -35,25 +35,21 @@
 .thumbs {
     float: left;
     height: 300px;
-    background: #000;
+    background: #ccc;
     position: relative;
 }
 
-.thumb {
+.thumbs img {
+    width: 100%;
     height: calc((300px) / 5);
+    object-fit: cover;
     opacity: 0.5;
 }
 
-.thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.thumb.active {
-    border: 2px solid #ccc;
+/* .thumbs.active {
+    border: 20px solid #ccc;
     opacity: 1;
-}
+} */
 
 .prev, .next {
     width: 20px;
@@ -70,6 +66,11 @@
 
 .next {
     bottom: 0;
+}
+
+.thumbs .active{
+    border: 3px solid black;
+    opacity: 1;
 }
 
 /*
