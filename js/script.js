@@ -35,24 +35,39 @@ createApp({
 
     methods: {
         showNext: function() {
+
+            clearInterval(this.curInterval);
+            this.curInterval = setInterval(this.showNext, this.intervalDuration);
+
             if(this.activeIndex === this.slides.length - 1) {
                 this.activeIndex = 0;
             } else {
                 this.activeIndex++;
             }
         },
+
         showPrev: function() {
+
+            clearInterval(this.curInterval);
+            this.curInterval = setInterval(this.showNext, this.intervalDuration);
+
             if(this.activeIndex === 0) {
                 this.activeIndex = this.slides.length - 1;
             } else {
                 this.activeIndex--;
             }
-         },    
+        }, 
+           
         startTimer: function() {
             if(this.curInterval === undefined){
                 this.curInterval = setInterval(this.showNext, this.intervalDuration);
             }
         },
+
+        pauseTimer: function(){
+            clearInterval(this.curInterval);
+            this.curInterval = undefined;
+        }
     },
 
     created() {

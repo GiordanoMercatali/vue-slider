@@ -18,7 +18,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <div class="item" @mouseover="pauseTimer" @mouseout="startTimer">
                     <div class="prev" @click="showPrev"></div>
                     <img :src="slides[activeIndex].image" alt="Spiderman" />
                     <div class="text">
