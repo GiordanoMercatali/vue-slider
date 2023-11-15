@@ -56,7 +56,13 @@ createApp({
             } else {
                 this.activeIndex--;
             }
-        }, 
+        },
+
+        showSlide: function(clickedIndex){
+            clearInterval(this.curInterval);
+            this.curInterval = setInterval(this.showNext, this.intervalDuration);
+            this.activeIndex = clickedIndex;
+        },
            
         startTimer: function() {
             if(this.curInterval === undefined){

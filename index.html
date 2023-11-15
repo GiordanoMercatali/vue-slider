@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="thumbs">                    
-                    <img v-for="(img, index) in slides" :src="img.image" alt="" :class="index === activeIndex ? 'active' : ''">
+                    <img v-for="(img, index) in slides" :src="img.image" alt="" :class="index === activeIndex ? 'active' : ''" @click="showSlide(index)">
                 </div>
 
             </div>
